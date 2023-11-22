@@ -1,9 +1,10 @@
 import { Toaster } from "react-hot-toast";
+import Usage from "./components/form/Usage";
 
 function App() {
   return (
     <>
-      <h1>Hello</h1>
+      <Usage />
 
       {/* react hot toast */}
       <Toaster />
