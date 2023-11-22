@@ -9,10 +9,12 @@ import BottomNavbar from "../navbar/BottomNavbar";
 import { BsArrowReturnRight } from "react-icons/bs";
 import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
-import { addLike } from "../../redux/features/post/postSlice";
+import { addComment, addLike } from "../../redux/features/post/postSlice";
+import toast from "react-hot-toast";
 
 export default function Posts() {
   const [viewCommentPostId, setViewCommentPostId] = useState("");
+  const [comment, setComment] = useState("");
 
   const { posts } = useAppSelector((state) => state.post);
 
@@ -76,6 +78,28 @@ export default function Posts() {
                 <p className="mx-2">{comment}</p>
               </div>
             ))}
+
+          <div>
+            <input
+              value={comment}
+              onChange={(e) => setComment(e.target.value)}
+              type="text"
+              placeholder="Type comment"
+              className="input input-bordered input-sm w-full max-w-xs"
+            />
+            <button
+              onClick={() => {
+                if (!comment) {
+                  return toast.error("Please enter a comment");
+                }
+                dispatch(addComment({ id: post.id, comment }));
+                setComment("");
+              }}
+              className="btn btn-link no-underline"
+            >
+              Add
+            </button>
+          </div>
         </div>
       ))}
       <div className="sticky bottom-0 lg:hidden">
