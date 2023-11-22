@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import posts from "../../data/posts.json";
 import { BsThreeDots } from "react-icons/bs";
 import { FaRegHeart } from "react-icons/fa";
 import { AiOutlineMessage } from "react-icons/ai";
@@ -9,12 +8,16 @@ import { HiOutlineSave } from "react-icons/hi";
 import BottomNavbar from "../navbar/BottomNavbar";
 import { BsArrowReturnRight } from "react-icons/bs";
 import { useState } from "react";
+import { useAppSelector } from "../../redux/hooks";
 
 export default function Posts() {
   const [viewCommentPostId, setViewCommentPostId] = useState("");
+
+  const { posts } = useAppSelector((state) => state.post);
+
   return (
     <div className="w-full mx-auto md:max-w-md relative md:p-5">
-      {posts.map((post: any, index: number) => (
+      {posts?.map((post: any, index: number) => (
         <div className="my-5" key={index}>
           <div className="flex justify-between items-center">
             <div className="flex items-center">
@@ -37,11 +40,19 @@ export default function Posts() {
             </div>
             <div className="flex justify-between items-center">
               <div className="flex items-center">
-                <FaRegHeart className="mx-2" size={30} />
-                <AiOutlineMessage className="mx-2" size={30} />
-                <TbLocationShare className="mx-2" size={30} />
+                <button>
+                  <FaRegHeart className="mx-2" size={30} />
+                </button>
+                <button>
+                  <AiOutlineMessage className="mx-2" size={30} />
+                </button>
+                <button>
+                  <TbLocationShare className="mx-2" size={30} />
+                </button>
               </div>
-              <HiOutlineSave size={30} />
+              <button>
+                <HiOutlineSave size={30} />
+              </button>
             </div>
           </div>
           <p className="mt-5 mb-2">{post?.likes} likes</p>
