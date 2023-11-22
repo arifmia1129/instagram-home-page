@@ -17,7 +17,7 @@ import { BsThreads } from "react-icons/bs";
 const SideNavbar = () => {
   const { collapseSidebar } = useProSidebar();
   return (
-    <Sidebar width="350px" collapsedWidth="66px">
+    <Sidebar collapsedWidth="66px">
       <Menu className="h-screen bg-gray-800 md:bg-white text-white md:text-black">
         <MenuItem
           icon={<MdOutlineKeyboardArrowLeft />}
