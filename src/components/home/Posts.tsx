@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import posts from "../../data/posts.json";
 import { BsThreeDots } from "react-icons/bs";
@@ -6,8 +7,11 @@ import { AiOutlineMessage } from "react-icons/ai";
 import { TbLocationShare } from "react-icons/tb";
 import { HiOutlineSave } from "react-icons/hi";
 import BottomNavbar from "../navbar/BottomNavbar";
+import { BsArrowReturnRight } from "react-icons/bs";
+import { useState } from "react";
 
 export default function Posts() {
+  const [viewCommentPostId, setViewCommentPostId] = useState("");
   return (
     <div className="w-full mx-auto md:max-w-md relative md:p-5">
       {posts.map((post: any, index: number) => (
@@ -42,7 +46,22 @@ export default function Posts() {
           </div>
           <p className="mt-5 mb-2">{post?.likes} likes</p>
           <p className="mb-5">{post?.post}</p>
-          <button>View all {post?.comments?.length} comments</button>
+          {viewCommentPostId === post.id ? (
+            <button onClick={() => setViewCommentPostId("")}>
+              Hide Comment
+            </button>
+          ) : (
+            <button onClick={() => setViewCommentPostId(post?.id)}>
+              View all {post?.comments?.length} comments
+            </button>
+          )}
+          {viewCommentPostId === post.id &&
+            post?.comments?.map((comment: any, index: number) => (
+              <div className="flex" key={index}>
+                <BsArrowReturnRight size={30} />
+                <p className="mx-2">{comment}</p>
+              </div>
+            ))}
         </div>
       ))}
       <div className="sticky bottom-0 lg:hidden">
