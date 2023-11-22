@@ -8,12 +8,15 @@ import { HiOutlineSave } from "react-icons/hi";
 import BottomNavbar from "../navbar/BottomNavbar";
 import { BsArrowReturnRight } from "react-icons/bs";
 import { useState } from "react";
-import { useAppSelector } from "../../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { addLike } from "../../redux/features/post/postSlice";
 
 export default function Posts() {
   const [viewCommentPostId, setViewCommentPostId] = useState("");
 
   const { posts } = useAppSelector((state) => state.post);
+
+  const dispatch = useAppDispatch();
 
   return (
     <div className="w-full mx-auto md:max-w-md relative md:p-5">
@@ -40,7 +43,7 @@ export default function Posts() {
             </div>
             <div className="flex justify-between items-center">
               <div className="flex items-center">
-                <button>
+                <button onClick={() => dispatch(addLike({ id: post.id }))}>
                   <FaRegHeart className="mx-2" size={30} />
                 </button>
                 <button>
