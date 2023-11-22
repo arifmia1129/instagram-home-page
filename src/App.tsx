@@ -22,9 +22,8 @@ function App() {
   }
   return (
     <>
-      {/* {userName ? <Home /> : <Login />} */}
+      {userName ? <Home /> : <Login />}
       <LoginNoticeModal />
-      <Home />
       {/* react hot toast */}
       <Toaster />
     </>

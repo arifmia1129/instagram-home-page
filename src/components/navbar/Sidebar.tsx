@@ -13,6 +13,7 @@ import { CgAddR } from "react-icons/cg";
 import { CgProfile } from "react-icons/cg";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BsThreads } from "react-icons/bs";
+import logo from "../../assets/Instagram_logo.png";
 
 const SideNavbar = () => {
   const { collapseSidebar } = useProSidebar();
@@ -25,6 +26,9 @@ const SideNavbar = () => {
             collapseSidebar();
           }}
         />
+        <div className="flex justify-center">
+          <img className="w-32 h-12" src={logo} alt="" />
+        </div>
         <MenuItem icon={<GoHomeFill size={30} />}>
           <Link to="/">Home</Link>
         </MenuItem>
