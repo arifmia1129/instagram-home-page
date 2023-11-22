@@ -13,6 +13,7 @@ export interface IFormProps {
   handleSubmit?: any;
   register?: any;
   className?: classNameType;
+  btnClass: string;
 }
 
 const Form: FC<IFormProps> = ({
@@ -22,6 +23,7 @@ const Form: FC<IFormProps> = ({
   onSubmit,
   handleSubmit,
   register,
+  btnClass,
   ...rest
 }) => {
   return (
@@ -44,9 +46,7 @@ const Form: FC<IFormProps> = ({
         </div>
       </div>
       <div className="flex justify-center">
-        <button className="btn btn-primary m-2 text-white">
-          {buttonLabel}
-        </button>
+        <button className={` text-white ${btnClass}`}>{buttonLabel}</button>
       </div>
     </form>
   );

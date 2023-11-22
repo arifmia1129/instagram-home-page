@@ -1,10 +1,10 @@
 import { Toaster } from "react-hot-toast";
-import Usage from "./components/form/Usage";
+import Login from "./Pages/Authentication/Login";
 
 function App() {
   return (
     <>
-      <Usage />
+      <Login />
 
       {/* react hot toast */}
       <Toaster />

@@ -17,6 +17,7 @@ const Input: FC<InputProps> = ({
   error,
   label,
   placeholderTxt,
+  className,
   ...rest
 }) => {
   return (
@@ -29,15 +30,15 @@ const Input: FC<InputProps> = ({
         {...rest}
         type={type}
         placeholder={placeholderTxt}
-        className="input input-bordered w-full md:w-96"
+        className={`input input-bordered ${className}`}
       />
-      <label className="label">
-        {error && (
+      {error && (
+        <label className="label">
           <span role="alert">
             <small className="text-red-500">{error}</small>
           </span>
-        )}
-      </label>
+        </label>
+      )}
     </div>
   );
 };
