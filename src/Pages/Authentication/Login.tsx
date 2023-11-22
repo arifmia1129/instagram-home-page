@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import * as yup from "yup";
+
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Form from "../../components/form/Form";
@@ -9,30 +9,16 @@ import FacebookLogin from "../../components/authentication/Login/FacebookLogin";
 import DonotAccout from "../../components/authentication/Login/DonotAccout";
 import GetApp from "../../components/authentication/Login/GetApp";
 import { useEffect } from "react";
+import { LoginSchema } from "../../components/form/validationSchema/ValidationSchema";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import Loading from "../../components/shared/Loading";
+import { loginUser, toggleLoading } from "../../redux/features/user/userSlice";
 
 // interface for form
 interface ILogin {
-  email: string;
+  userName: string;
   password: string;
 }
-
-// validation
-const EmailSchema = yup.object().shape({
-  email: yup
-    .string()
-    .email("Enter a valid email")
-    .required("Email is required"),
-  password: yup
-    .string()
-    .max(32, "Max password length is 32")
-    .required("Password is required"),
-  image: yup
-    .mixed()
-    .test("required", "You need to provide a file", (file: any) => {
-      if (file?.length) return true;
-      return false;
-    }),
-});
 
 const Login = () => {
   useEffect(() => {
@@ -43,9 +29,21 @@ const Login = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({ resolver: yupResolver(EmailSchema) });
+  } = useForm({ resolver: yupResolver(LoginSchema) });
 
-  const onSubmit = (data: ILogin) => console.log(data);
+  const { isLoading } = useAppSelector((state) => state.user);
+  const dispatch = useAppDispatch();
+
+  const onSubmit = (data: ILogin) => {
+    dispatch(loginUser({ userName: data.userName }));
+    setTimeout(() => {
+      dispatch(toggleLoading());
+    }, 2000);
+  };
+
+  if (isLoading) {
+    return <Loading />;
+  }
 
   return (
     <>
@@ -64,19 +62,19 @@ const Login = () => {
               btnClass="bg-primary h-8 flex items-center justify-center py-2 w-full mt-4 rounded"
             >
               <Input
-                name="email"
+                name="userName"
                 type="text"
                 placeholderTxt="Phone number, username or email"
-                error={errors.email?.message}
+                error={errors.userName?.message}
                 register={register}
                 autoFocus
                 className="h-10 rounded-none border-gray-400 bg-gray-100"
               />
               <Input
-                name="email"
-                type="text"
+                name="password"
+                type="password"
                 placeholderTxt="Password"
-                error={errors.email?.message}
+                error={errors.password?.message}
                 register={register}
                 autoFocus
                 className="h-10 rounded-none border-gray-400 bg-gray-100"

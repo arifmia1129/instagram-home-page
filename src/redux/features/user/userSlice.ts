@@ -1,59 +1,28 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 interface IUser {
-  name: string | null;
-  email: string | null;
+  userName: string | null;
   isLoading: boolean;
 }
 
 const initialState: IUser = {
-  name: null,
-  email: null,
-  isLoading: true,
+  userName: null,
+  isLoading: false,
 };
-
-export const fetchedUserProfile = createAsyncThunk(
-  "user/fetchedUserProfile",
-  async () => {
-    const response = await fetch("api/path", {
-      headers: {
-        Authorization: localStorage.getItem("token") as string,
-      },
-    });
-    const data = await response.json();
-
-    if (!data.success) {
-      localStorage.removeItem("token");
-    }
-
-    const { email, name } = data.data;
-
-    return { email, name };
-  }
-);
 
 const userSlice = createSlice({
   name: "user",
   initialState,
-  reducers: {},
-  extraReducers: (builder) => {
-    builder
-      .addCase(fetchedUserProfile.pending, (state) => {
-        state.isLoading = true;
-        state.email = null;
-        state.name = null;
-      })
-      .addCase(fetchedUserProfile.fulfilled, (state, { payload }) => {
-        state.isLoading = false;
-        state.email = payload?.email;
-        state.name = payload?.name;
-      })
-      .addCase(fetchedUserProfile.rejected, (state) => {
-        state.isLoading = false;
-        state.email = null;
-        state.name = null;
-      });
+  reducers: {
+    loginUser: (state, { payload }) => {
+      state.isLoading = true;
+      state.userName = payload.userName;
+    },
+    toggleLoading: (state) => {
+      state.isLoading = false;
+    },
   },
 });
+export const { loginUser, toggleLoading } = userSlice.actions;
 
 export default userSlice.reducer;
