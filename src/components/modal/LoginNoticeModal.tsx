@@ -1,17 +1,17 @@
+import { FaInfoCircle } from "react-icons/fa";
+
 export default function LoginNoticeModal() {
   return (
     <div>
-      <button
-        className="btn"
-        onClick={() => document.getElementById("login-modal").showModal()}
-      >
-        open modal
-      </button>
       <dialog id="login-modal" className="modal modal-bottom sm:modal-middle">
         <div className="modal-box">
-          <h3 className="font-bold text-lg">Hello!</h3>
+          <h3 className="font-bold text-xl">Login Instruction!</h3>
+          <div className="flex justify-center">
+            <FaInfoCircle size={100} className="text-primary" />
+          </div>
           <p className="py-4">
-            Press ESC key or click the button below to close
+            Hey, You can login with any information. Bacause of I don't
+            implement server side with this login section yet.
           </p>
           <div className="modal-action">
             <form method="dialog">

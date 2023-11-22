@@ -9,7 +9,6 @@ import FacebookLogin from "../../components/authentication/Login/FacebookLogin";
 import DonotAccout from "../../components/authentication/Login/DonotAccout";
 import GetApp from "../../components/authentication/Login/GetApp";
 import { useEffect } from "react";
-import toast from "react-hot-toast";
 
 // interface for form
 interface ILogin {
@@ -37,7 +36,7 @@ const EmailSchema = yup.object().shape({
 
 const Login = () => {
   useEffect(() => {
-    toast.success("hello");
+    (document as any).getElementById("login-modal").showModal();
   }, []);
 
   const {
