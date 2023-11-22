@@ -5,6 +5,8 @@ import { useAppSelector } from "./redux/hooks";
 import Home from "./Pages/Home/Home";
 import Loading from "./components/shared/Loading";
 import SideNavbar from "./components/navbar/Sidebar";
+import Posts from "./components/home/Posts";
+import BottomNavbar from "./components/navbar/BottomNavbar";
 
 function App() {
   const { userName, isLoading } = useAppSelector((state) => state.user);
@@ -14,10 +16,9 @@ function App() {
   }
   return (
     <>
-      {/* {userName ? <Home /> : <Login />}
-      <LoginNoticeModal /> */}
-      <SideNavbar />
-
+      {/* {userName ? <Home /> : <Login />} */}
+      <LoginNoticeModal />
+      <Home />
       {/* react hot toast */}
       <Toaster />
     </>

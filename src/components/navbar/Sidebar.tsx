@@ -1,17 +1,9 @@
-import {
-  Sidebar,
-  Menu,
-  MenuItem,
-  SubMenu,
-  useProSidebar,
-} from "react-pro-sidebar";
+import { Sidebar, Menu, MenuItem, useProSidebar } from "react-pro-sidebar";
 import { Link } from "react-router-dom";
 import {
   MdOutlineKeyboardArrowLeft,
   MdOutlineOndemandVideo,
 } from "react-icons/md";
-import { AiFillFile } from "react-icons/ai";
-import { TbDeviceMobileMessage } from "react-icons/tb";
 import { GoHomeFill } from "react-icons/go";
 import { IoSearchOutline } from "react-icons/io5";
 import { MdOutlineExplore } from "react-icons/md";
@@ -25,8 +17,8 @@ import { BsThreads } from "react-icons/bs";
 const SideNavbar = () => {
   const { collapseSidebar } = useProSidebar();
   return (
-    <Sidebar collapsedWidth="66px">
-      <Menu className="h-screen relative">
+    <Sidebar width="350px" collapsedWidth="66px">
+      <Menu className="h-screen bg-gray-800 md:bg-white text-white md:text-black">
         <MenuItem
           icon={<MdOutlineKeyboardArrowLeft />}
           onClick={() => {

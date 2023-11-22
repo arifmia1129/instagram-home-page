@@ -1,0 +1,130 @@
+[
+  {
+    "id": 1,
+    "author": {
+      "name": "Alice",
+      "profile_url": "https://instagram.com/alice_profile",
+      "profile_image_url": "https://images.unsplash.com/photo-1560250097-0b93528c311a"
+    },
+    "likes": 1500,
+    "comments": ["Beautiful!", "Love this!", "Amazing shot!"],
+    "post": "Exploring the city vibes. 🏙️ #CityLife #Adventure",
+    "image_url": "https://images.unsplash.com/photo-1618338279109-d470da3999ed"
+  },
+  {
+    "id": 2,
+    "author": {
+      "name": "Bob",
+      "profile_url": "https://instagram.com/bob_profile",
+      "profile_image_url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
+    },
+    "likes": 2300,
+    "comments": ["Stunning!", "Nature at its best.", "Wish I was there!"],
+    "post": "Sunset views over the mountains. 🌄 #NatureLover #SunsetMagic",
+    "image_url": "https://images.unsplash.com/photo-1535451801241-b5395e1d4a1b"
+  },
+  {
+    "id": 3,
+    "author": {
+      "name": "Charlie",
+      "profile_url": "https://instagram.com/charlie_profile",
+      "profile_image_url": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e"
+    },
+    "likes": 1800,
+    "comments": [
+      "Simply breathtaking!",
+      "Magical moment captured.",
+      "Speechless!"
+    ],
+    "post": "Chasing waterfalls. 💦 #AdventureTime #WaterfallMagic",
+    "image_url": "https://images.unsplash.com/photo-1602492665157-639323eadd31"
+  },
+  {
+    "id": 4,
+    "author": {
+      "name": "Diana",
+      "profile_url": "https://instagram.com/diana_profile",
+      "profile_image_url": "https://images.unsplash.com/photo-1618338279109-d470da3999ed"
+    },
+    "likes": 2500,
+    "comments": ["Wow!", "Dreamy vibes.", "In love with this look!"],
+    "post": "Saturday night glam. ✨ #NightOut #Glamorous",
+    "image_url": "https://images.unsplash.com/photo-1618338279109-d470da3999ed"
+  },
+  {
+    "id": 5,
+    "author": {
+      "name": "Ethan",
+      "profile_url": "https://instagram.com/ethan_profile",
+      "profile_image_url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
+    },
+    "likes": 2000,
+    "comments": ["Adorable!", "Best buddies.", "Puppy love! 🐾"],
+    "post": "Meet my new furry friend, Max! #PuppyLove #NewBeginnings",
+    "image_url": "https://images.unsplash.com/photo-1535451801241-b5395e1d4a1b"
+  },
+  {
+    "id": 6,
+    "author": {
+      "name": "Fiona",
+      "profile_url": "https://instagram.com/fiona_profile",
+      "profile_image_url": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e"
+    },
+    "likes": 3000,
+    "comments": ["Classy!", "Elegance personified.", "Outfit goals!"],
+    "post": "Sunday brunch in style. 🍽️ #Fashionista #BrunchGoals",
+    "image_url": "https://images.unsplash.com/photo-1602492665157-639323eadd31"
+  },
+  {
+    "id": 7,
+    "author": {
+      "name": "George",
+      "profile_url": "https://instagram.com/george_profile",
+      "profile_image_url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
+    },
+    "likes": 2200,
+    "comments": ["Impressive!", "Art in the making.", "Love the creativity!"],
+    "post": "Working on my latest painting. 🎨 #ArtisticSoul #Creativity",
+    "image_url": "https://images.unsplash.com/photo-1535451801241-b5395e1d4a1b"
+  },
+  {
+    "id": 8,
+    "author": {
+      "name": "Hannah",
+      "profile_url": "https://instagram.com/hannah_profile",
+      "profile_image_url": "https://images.unsplash.com/photo-1618338279109-d470da3999ed"
+    },
+    "likes": 2800,
+    "comments": ["Vacation goals!", "Paradise found.", "Take me there!"],
+    "post": "Relaxing by the beach. 🏖️ #VacationMode #BeachLife",
+    "image_url": "https://images.unsplash.com/photo-1618338279109-d470da3999ed"
+  },
+  {
+    "id": 9,
+    "author": {
+      "name": "Ian",
+      "profile_url": "https://instagram.com/ian_profile",
+      "profile_image_url": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e"
+    },
+    "likes": 1900,
+    "comments": [
+      "Vintage vibes!",
+      "Nostalgia overload.",
+      "Love the old-school look!"
+    ],
+    "post": "Exploring antique markets. 🕰️ #VintageFinds #AntiqueHunt",
+    "image_url": "https://images.unsplash.com/photo-1618338279109-d470da3999ed"
+  },
+  {
+    "id": 10,
+    "author": {
+      "name": "Julia",
+      "profile_url": "https://instagram.com/julia_profile",
+      "profile_image_url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
+    },
+    "likes": 2600,
+    "comments": ["Incredible!", "Magical sunset.", "Nature's masterpiece!"],
+    "post": "Camping under the stars. ⛺🌌 #StarryNight #OutdoorAdventure",
+    "image_url": "https://images.unsplash.com/photo-1535451801241-b5395e1d4a1b"
+  }
+]
